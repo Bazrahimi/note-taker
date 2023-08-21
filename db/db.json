@@ -1,6 +1,34 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title": "Test Title",
+        "text": "Test text"
+    },
+    {
+        "title": "Reminder",
+        "text": "call bank on friday"
+    },
+    {
+        "title": "Tasks",
+        "text": "reschedule delivery"
+    },
+    {
+        "title": "Payroll",
+        "text": "finish payroll"
+    },
+    {
+        "title": "Client Task",
+        "text": "check in with clients"
+    },
+    {
+        "title": "Upcoming Lunch",
+        "text": "client lunch on thursday"
+    },
+    {
+        "title": "Important",
+        "text": "really important note"
+    },
+    {
+        "title": "App",
+        "text": "note app"
     }
 ]
