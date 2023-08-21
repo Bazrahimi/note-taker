@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const noteRoutes = require('./note.js');
+const noteRoutes = require('./notes.js');
 
 // For routes that start with /api/notes
 router.use('/notes', noteRoutes);
