@@ -1,7 +1,10 @@
+//server.js
 //import express library
 const express = require('express');
 //import path modules
 const path = require('path');
+
+const apiRoutes = require('./routes/index.js');
 
 //initilize an instance of express.js
 const app = express();
@@ -9,8 +12,15 @@ const app = express();
 //specify PORT
 const PORT = 3001;
 
+// Middleware for parsing JSON and urlencoded form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //static middleware pointing to the public folder
 app.use(express.static('public'));
+
+// Send all the requests that begin with /api to the index.js in the routes folder
+app.use('/api', apiRoutes);
 
 // it sends the 'index.html' file as a response.
 app.get('/', (req, res) => {
