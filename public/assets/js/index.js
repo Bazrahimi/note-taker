@@ -1,6 +1,3 @@
-// const { response } = require("express");
-
-// front end index.js
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -34,16 +31,7 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok')  
-      }
-      return response.json();
-  })
-  .catch(error => {
-    console.error('there was a problem with the fetch operation', error.message);
-  })
+  });
 
 const saveNote = (note) =>
   fetch('/api/notes', {
