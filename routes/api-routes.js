@@ -23,6 +23,24 @@ router.post('/api/notes', (req, res) => {
   res.json(dbJson);
 });
 
+router.delete('/api/notes/:id', (req, res) => {
+  fs.readFile('db/db.json', 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({ message: "Error reading the database file." });
+    }
+    const dataJSON = JSON.parse(data);
+    const newNotes = dataJSON.filter(note => note.id !== req.params.id);
+
+    fs.writeFile('db/db.json', JSON.stringify(newNotes), (err) => {
+      if (err) {
+        return res.status(500).json({ message: "Error writing to the database file." });
+      }
+      res.json({ message: 'Note Deleted' });
+    });
+  });
+});
+
+
 
 
 
