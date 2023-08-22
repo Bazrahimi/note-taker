@@ -16,11 +16,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-
-
-
 //static middleware pointing to the public folder
-// Put it before the fallback route to ensure it doesn't interfere with other routes.
 app.use(express.static('public'));
 
 app.use(html_routes);

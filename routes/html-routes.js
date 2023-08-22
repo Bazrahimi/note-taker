@@ -1,4 +1,4 @@
-//routes/html-index.js
+//require modules
 const router = require('express').Router();
 const path = require('path');
 
